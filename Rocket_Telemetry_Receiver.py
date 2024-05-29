@@ -52,22 +52,24 @@ def plotSerial(port, baud_rate):
                     pitot = data[0].split(":")
                     alt = data[1].split(":")
                     acc = data[2].split(":")
+                else
+                    print("Potential error, data recieve: ", data)
 
                 # Check sensor data
                 # index 0 = label, index 1 = value
-                if pitot[0] == "Pi":
+                if pitot[0] == "Pi" && pitot[1] != -20:
                     pitot_y = np.append(pitot_y, float(pitot[1]))
                 else:
                     print("Pitot value not found", pitot)
                     pitot_y = np.append(pitot_y, pitot_y[-1])
 
-                if alt[0] == "Al":
+                if alt[0] == "Al" && alt[1] != -20:
                     alt_y = np.append(alt_y, float(alt[1]))
                 else:
                     print("Alt value not found", alt)
                     alt_y = np.append(alt_y, alt_y[-1])
 
-                if acc[0] == "Ac":
+                if acc[0] == "Ac" && acc[1] != -20:
                     acc_y = np.append(acc_y, float(acc[1]))
                 else:
                     print("Acc value not found", acc)
