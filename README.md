@@ -5,7 +5,7 @@ Electronics
 - Arduino UNO
 - Adafruit MPL3115A2 Altimeter (I2C)
 - Adafruit LIS3DH Accelerometer (I2C)
-- Holybro Air Speed Sensor (SPI)
+- Holybro Air Speed Sensor (I2C)
 - Two XBee Pro 60mW PCB Antenna - Series 1 (UART)
 - Sparkfun XBee Explorer dongle
 
