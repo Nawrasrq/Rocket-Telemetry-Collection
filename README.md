@@ -12,5 +12,6 @@ Electronics
 Updates
 - Cleaned up the Rocket_Telemetry_Transmitter.ino (previously RocketSensorRead.ino) 
 - Rewrote the Rocket_Telemetry_Reciever in python using matplotlib instead of the processing.ide
-- Created a Rocket_Telemetry_Sensor_Sim for testing (Replaces sensor data with randomized values)
+- Created a Rocket_Telemetry_Sensor_Sim for testing (Replaces sensor data with fake values)
+- Demo of Rocket_Telemetry_Sensor_Sim https://www.youtube.com/watch?v=ck_YBaOXKkw
 - Included the original files used during the flight in the Old Files folder
