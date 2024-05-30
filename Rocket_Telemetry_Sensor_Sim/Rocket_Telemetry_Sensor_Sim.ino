@@ -1,8 +1,10 @@
 #include <stdlib.h>
 
+float pitot_tube_prev = 0.0;
 float pitot_tube = 0.0;
 float altimeter = 0.0;
 float accelerometer = 0.0;
+int x = 0;
 
 void transmit(String message){
   for (int i = 0; i < message.length(); i++)
@@ -20,9 +22,13 @@ void loop(){
   char acceleration_buffer[15];
   char message[100];
 
-  pitot_tube = (float) random(0,100);
-  altimeter = (float) random(0,1800);
-  accelerometer = (float) random(-16,16);
+  // Simulate values
+  if(x <= 20)
+    x += 1;
+  pitot_tube_prev = pitot_tube;
+  pitot_tube = (float) -sq(x - 10) + 100;               // (float) random(0,100);
+  altimeter = (float) -sq(4*x - 42) + 1700;                     // (float) random(0,1800);
+  accelerometer = (float) ((pitot_tube - pitot_tube_prev) / x); // (float) random(-16,16);
 
   // Format message, begins with P and ends with newline
   dtostrf(pitot_tube, 4, 2, pitot_tube_buffer);
